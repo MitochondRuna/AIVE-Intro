@@ -33,13 +33,15 @@ To begin with, here are some ideas to consider when you add a commit to the AIVE
 
 ### Structure of a commit
 When you submit a commit, you will have two components to add, in addition to your changes to the files themselves. These are the commit message, and the extended description. The commit message should be a brief phrase that describes the change. The description should also still be brief but should adequately summarise the nature of the commit. Depending on the change this may be one or two sentences. Some commits may be simple enough that just the commit message is enough information alone. If a new person read your commit message, would they know what to expect before they look at your code?
-Granularity/singularity:
+
+### Granularity/singularity:
 This principle refers to the size and specificity of a commit. Ideally, each commit is a small and specific workable step. This allows for easy tracking and merging of changes through the lifetime of the project. 
 A single commit should be looked at independently. However, we don’t need a commit for every small change you make. For example, say you are updating the name of a variable that is referenced may times throughout your code. You can update all instances of the variable name in one go and submit it as single commit.
 
-It can be tricky to find a good balance but an individual commit should include a single identifiable aim. For example: “Create a new function to process input A”, or “Correct an error in function B”.  
+It can be tricky to find a good balance but an individual commit should include a single identifiable aim. For example: “Create a new function to process input A”, or “Correct an error in function B”. 
+
 As a general rule, if you feel the need to add an “And” to your commit message, you may want to consider breaking it up. For example, instead of one commit that “Adds a new function A and fixes errors on line 127 of function B” you should split your changes into two separate commits. 
 
 ### Errors and corrections
-As you are learning and working with =in the AIVE project you may find yourself testing and re-testing some code. Alternatively you may be working on some updates to the documentation. It can be tempting to only commit the final version of your work to the repo. Whilst we don't expect you to include all your tiny errors and corrections as you work, please consider submitting your commits before they are the "final" version. This helps you track your own progress and learning, and also allows others an insight into how a problem was solved. Perfect code is rare, but we can all learn by seeing how others approach an issue.
+As you are learning and working within the AIVE project you may find yourself testing and re-testing some code. Alternatively you may be working on some updates to the documentation. It can be tempting to only commit the final version of your work to the repo. Whilst we don't expect you to include all your tiny errors and corrections as you work, please consider submitting your commits before they are the "final" version. This helps break up your work into smaller commits and makes it easier to track your own progress and learning along the way. It will also allow others an insight into how a problem was solved. Perfect code is rare, but we can all learn by seeing how others approach an issue.
 
