@@ -101,7 +101,7 @@ def image_split(image_path, mask_dir, mask_prefix):
 
     image_stack = load_image_stack(image_path)  # Load image stack (32-bit TIFF
     # image)
-    if len(image_stack) == INIT_N:
+    if len(image_stack)==INIT_N:
         print("Image stack load failed")
         return ERROR
 
@@ -142,6 +142,13 @@ def main():
                         "'default'): ") or "default"  # Enter masks' filename
     # prefix
     mask_dir = mask_dir_select()  # Select masks' output directory
+    if mask_dir=="":
+        print("No masks' output directory selected")
+        return ERROR
+    elif not os.path.isdir(mask_dir):
+        print("Invalid masks' output directory")
+        return ERROR
+
     image_split(image_path, mask_dir, mask_prefix)  # Split image into masks
 
 
