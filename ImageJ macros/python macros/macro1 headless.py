@@ -11,18 +11,6 @@ ERROR = -1  # Error flag
 INIT_N = 0  # Initial number
 INIT_I = 0  # Initial index
 
-def mask_dir_select():
-    """
-    Opens dialog to select masks' output directory
-
-    :return: Masks' output directory
-    """
-
-    root = Tk()
-    root.withdraw()
-    directory = filedialog.askdirectory(title="Select masks' output directory")
-    return directory
-
 
 def load_image_stack(image_path):
     """
@@ -128,7 +116,7 @@ def main():
     mask_prefix = input("Enter masks' filename prefix (default (blank) is "
                         "'default'): ") or "default"  # Enter masks' filename
     # prefix
-    mask_dir = mask_dir_select()  # Select masks' output directory
+    mask_dir = input("Enter masks' output directory: ")
     if mask_dir=="":
         print("No masks' output directory selected")
         return ERROR
