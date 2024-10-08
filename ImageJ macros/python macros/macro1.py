@@ -54,7 +54,7 @@ def load_image_stack(image_path):
         while True:
             frame = np.array(image)
             image_stack.append(frame)
-            image.seek(image.tell() + 1)  # Move to next frame
+            image.seek(image.tell()+1)  # Move to next frame
     except EOFError:
         pass
 
@@ -85,7 +85,7 @@ def mask_stack_save(mask_stack, mask_stack_path):
     mask_image_stack = [Image.fromarray(mask) for mask in mask_stack]  # Convert
     # mask stack from NumPy arrays into images
     mask_image_stack[INIT_I].save(mask_stack_path, save_all=True,
-                                  append_images=mask_image_stack[INIT_I + 1:],
+                                  append_images=mask_image_stack[INIT_I+1:],
                                   compression="tiff_deflate")  # Save mask stack
     # at specified path
 
@@ -110,7 +110,7 @@ def image_split(image_path, mask_dir, mask_prefix):
 
     # Create mask using each unique pixel value
     for value in unique_values:
-        if value == INIT_N:  # If value==0 resulting mask will be inverted image
+        if value==INIT_N:  # If value==0 resulting mask will be inverted image
             # therefore skip
             continue
 
