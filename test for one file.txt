@@ -1,0 +1,103 @@
+# trace generated using paraview version 5.9.0
+
+from paraview.simple import *
+paraview.simple._DisableFirstRenderCameraReset()
+
+# test one file
+x = "_01"
+
+# create a new 'TIFF Series Reader'
+Workingimage = TIFFSeriesReader(
+    registrationName='Model5A' + x,
+    FileNames=[r'E:\AIVE_main\intern work\A2_Output\MP3_Model5A' + x + '.tif']
+)
+Workingimage.UseCustomDataSpacing = 1
+Workingimage.CustomDataSpacing = [0.030013, 0.030013, 0.1]
+
+# get active view
+renderView1 = GetActiveViewOrCreate('RenderView')
+
+# show data in view
+WorkingimageDisplay = Show(Workingimage, renderView1, 'UniformGridRepresentation')
+WorkingimageDisplay.Representation = 'Outline'
+WorkingimageDisplay.ColorArrayName = ['POINTS', '']
+WorkingimageDisplay.SelectTCoordArray = 'None'
+WorkingimageDisplay.SelectNormalArray = 'None'
+WorkingimageDisplay.SelectTangentArray = 'None'
+WorkingimageDisplay.OSPRayScaleArray = 'Tiff Scalars'
+WorkingimageDisplay.OSPRayScaleFunction = 'PiecewiseFunction'
+WorkingimageDisplay.SelectOrientationVectors = 'None'
+WorkingimageDisplay.ScaleFactor = 1.08
+WorkingimageDisplay.SelectScaleArray = 'Tiff Scalars'
+WorkingimageDisplay.GlyphType = 'Arrow'
+WorkingimageDisplay.GlyphTableIndexArray = 'Tiff Scalars'
+WorkingimageDisplay.GaussianRadius = 0.054000000000000006
+WorkingimageDisplay.SetScaleArray = ['POINTS', 'Tiff Scalars']
+WorkingimageDisplay.ScaleTransferFunction = 'PiecewiseFunction'
+WorkingimageDisplay.OpacityArray = ['POINTS', 'Tiff Scalars']
+WorkingimageDisplay.OpacityTransferFunction = 'PiecewiseFunction'
+WorkingimageDisplay.DataAxesGrid = 'GridAxesRepresentation'
+WorkingimageDisplay.PolarAxes = 'PolarAxesRepresentation'
+WorkingimageDisplay.ScalarOpacityUnitDistance = 0.07774812167408818
+WorkingimageDisplay.OpacityArrayName = ['POINTS', 'Tiff Scalars']
+WorkingimageDisplay.IsosurfaceValues = [124.0]
+
+WorkingimageDisplay.OSPRayScaleFunction.Points = [-1.2672, 0.0, 0.5, 0.0, 24.196, 1.0, 0.5, 0.0]
+WorkingimageDisplay.ScaleTransferFunction.Points = [0.0, 0.0, 0.5, 0.0, 248.0, 1.0, 0.5, 0.0]
+WorkingimageDisplay.OpacityTransferFunction.Points = [0.0, 0.0, 0.5, 0.0, 248.0, 1.0, 0.5, 0.0]
+WorkingimageDisplay.SliceFunction.Origin = [4.9971645, 4.9971645, 5.4]
+
+renderView1.ResetCamera()
+materialLibrary1 = GetMaterialLibrary()
+renderView1.Update()
+
+ColorBy(WorkingimageDisplay, ('POINTS', 'Tiff Scalars'))
+WorkingimageDisplay.RescaleTransferFunctionToDataRange(True, True)
+WorkingimageDisplay.SetRepresentationType('Volume')
+
+tiffScalarsLUT = GetColorTransferFunction('TiffScalars')
+tiffScalarsPWF = GetOpacityTransferFunction('TiffScalars')
+
+# create a new 'Contour'
+contour1 = Contour(registrationName=('Contour' + x), Input=Workingimage)
+contour1.ContourBy = ['POINTS', 'Tiff Scalars']
+contour1.ComputeGradients = 1
+contour1.Isosurfaces = [48.0]
+contour1.PointMergeMethod = 'Octree Binning'
+
+contour1Display = Show(contour1, renderView1, 'GeometryRepresentation')
+contour1Display.Representation = 'Surface'
+contour1Display.ColorArrayName = ['POINTS', 'Tiff Scalars']
+contour1Display.LookupTable = tiffScalarsLUT
+contour1Display.SelectTCoordArray = 'None'
+contour1Display.SelectNormalArray = 'Normals'
+contour1Display.SelectTangentArray = 'None'
+contour1Display.OSPRayScaleArray = 'Tiff Scalars'
+contour1Display.OSPRayScaleFunction = 'PiecewiseFunction'
+contour1Display.SelectOrientationVectors = 'Gradients'
+contour1Display.ScaleFactor = 0.896
+contour1Display.SelectScaleArray = 'Tiff Scalars'
+contour1Display.GlyphType = 'Arrow'
+contour1Display.GlyphTableIndexArray = 'Tiff Scalars'
+contour1Display.GaussianRadius = 0.0448
+contour1Display.SetScaleArray = ['POINTS', 'Tiff Scalars']
+contour1Display.ScaleTransferFunction = 'PiecewiseFunction'
+contour1Display.OpacityArray = ['POINTS', 'Tiff Scalars']
+contour1Display.OpacityTransferFunction = 'PiecewiseFunction'
+contour1Display.DataAxesGrid = 'GridAxesRepresentation'
+contour1Display.PolarAxes = 'PolarAxesRepresentation'
+contour1Display.OSPRayScaleFunction.Points = [-1.2672, 0.0, 0.5, 0.0, 24.196, 1.0, 0.5, 0.0]
+contour1Display.ScaleTransferFunction.Points = [64.0, 0.0, 0.5, 0.0, 64.0156, 1.0, 0.5, 0.0]
+contour1Display.OpacityTransferFunction.Points = [64.0, 0.0, 0.5, 0.0, 64.0156, 1.0, 0.5, 0.0]
+contour1Display.SetScalarBarVisibility(renderView1, True)
+
+renderView1.Update()
+
+# save layout and the positions of cameras
+layout1 = GetLayout()
+layout1.SetSize(1142, 552)
+renderView1.CameraPosition = [4.9971647, 4.9971647, 39.76379]
+renderView1.CameraFocalPoint = [4.9971647, 4.9971647, 5.4]
+renderView1.CameraParallelScale = 8.894
+
+# RenderAllViews()  # optional
