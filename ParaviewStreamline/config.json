@@ -1,0 +1,7 @@
+{
+    "inputFolder": "/Users/cheryl/Documents/AIVE/Paraview/AIVE merge - Paraview",
+    "parameters": {
+        "customDataSpacing": [0.03, 0.03, 0.1],
+        "isosurfaces": 32.0
+    }
+}
