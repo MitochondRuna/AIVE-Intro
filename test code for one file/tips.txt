@@ -4,3 +4,4 @@
 
 3.change registration name and file name
 
+4. Download link for input: https://drive.google.com/drive/folders/1tYgeA7FHXffrVzm1vBYM-A8hfXKE_rT-?usp=drive_link
