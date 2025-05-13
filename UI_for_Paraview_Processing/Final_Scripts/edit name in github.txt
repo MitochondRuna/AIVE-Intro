@@ -1,0 +1,31 @@
+git bash：
+cd ~/.ssh
+ssh -T git@github.com
+cd AIVE-Intro
+git checkout WEHI-Internship-S1-2025
+git mv "test code for one file" UI_for_Paraview_Processing
+git commit -m "Rename folder 'test file for one file' to UI_for_Paraview_Processing"
+git push origin WEHI-Internship-S1-2025
+
+# （1）进入 SSH 密钥目录（可选，仅检查）
+cd ~/.ssh
+
+# （2）测试 SSH 是否能成功连接 GitHub（确认权限）
+ssh -T git@github.com
+
+# （3）进入你的本地仓库目录
+cd AIVE-Intro
+
+# （4）切换到你要修改的分支
+git checkout WEHI-Internship-S1-2025
+
+# （5）重命名文件夹（注意：旧文件夹名需加引号，如果有空格）
+git mv "test code for one file" UI_for_Paraview_Processing
+
+# （6）提交更改
+git commit -m "Rename folder 'test code for one file' to 'UI_for_Paraview_Processing'"
+
+# （7）推送到远程仓库对应分支
+git push origin WEHI-Internship-S1-2025
+
+
