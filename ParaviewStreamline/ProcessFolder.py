@@ -33,11 +33,9 @@ def LoadConfig(configPath):
 
 # open all .tif files in a selected folder
 def ProcessFolder(inputFolder, CustomDataSpacing, Isosurfaces):
-    counter = 0
     for fileName in os.listdir(inputFolder):
         if fileName.endswith(".tif"):
             inputFile = os.path.join(inputFolder, fileName)
-            counter += 1
 
             # create a new 'TIFF Series Reader'
             model = TIFFSeriesReader(registrationName=fileName, FileNames=[inputFile])
@@ -45,7 +43,7 @@ def ProcessFolder(inputFolder, CustomDataSpacing, Isosurfaces):
             model.CustomDataSpacing = CustomDataSpacing
 
             # create a new 'Contour'
-            contour = Contour(registrationName='Contour' + str(counter), Input=model)
+            contour = Contour(registrationName='Contour ' + fileName, Input=model)
             contour.ContourBy = ['POINTS', 'Tiff Scalars']
             contour.ComputeGradients = 1
             contour.Isosurfaces = Isosurfaces
@@ -56,6 +54,6 @@ def ProcessFolder(inputFolder, CustomDataSpacing, Isosurfaces):
 # ----------------------------------------------------------------
 
 # currently use an absolute path for the config file
-configPath = "/Users/cheryl/Documents/AIVE/Paraview/AIVE merge - Paraview/config.json"
+configPath = "/Users/cheryl/Documents/GitHub/AIVE-Intro/ParaviewStreamline/config.json"
 InputFolder, CustomDataSpacing, Isosurfaces = ReadConfigFile(configPath)
 ProcessFolder(InputFolder, CustomDataSpacing, Isosurfaces)
