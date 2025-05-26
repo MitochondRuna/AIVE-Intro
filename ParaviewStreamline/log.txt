@@ -1,0 +1,10 @@
+[2025-05-26 16:46:04.901303] PARAVIEW SESSION COMPLETED
+Input Files: 
+/Users/cheryl/Documents/GitHub/AIVE-Intro/ParaviewStreamline/MP3_Model5A_05.tifproc.tif
+/Users/cheryl/Documents/GitHub/AIVE-Intro/ParaviewStreamline/MP3_Model5A_03.tifproc.tif
+/Users/cheryl/Documents/GitHub/AIVE-Intro/ParaviewStreamline/MP3_Model5A_06.tifproc.tif
+/Users/cheryl/Documents/GitHub/AIVE-Intro/ParaviewStreamline/MP3_Model5A_01.tifproc.tif
+/Users/cheryl/Documents/GitHub/AIVE-Intro/ParaviewStreamline/MP3_Model5A_04.tifproc.tif
+/Users/cheryl/Documents/GitHub/AIVE-Intro/ParaviewStreamline/MP3_Model5A_02.tifproc.tif
+Custom Data Spacing: [0.03, 0.03, 0.1]
+Isosurfaces: 32.0
