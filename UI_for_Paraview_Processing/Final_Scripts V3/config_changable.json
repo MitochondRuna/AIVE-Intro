@@ -1,0 +1,19 @@
+{
+    "folder": "E:/AIVE_main/paraview work/Test for one file in Paraview/A2_Output/",
+    "file_names": [
+        "MP3_Model5A_01.tif",
+        "MP3_Model5A_02.tif",
+        "MP3_Model5A_03.tif",
+        "MP3_Model5A_04.tif",
+        "MP3_Model5A_05.tif",
+        "MP3_Model5A_06.tif"
+    ],
+    "spacing": [
+        0.030013,
+        0.030013,
+        0.1
+    ],
+    "isosurface_value": 48.0,
+    "export_x3d": true,
+    "export_stl": true
+}

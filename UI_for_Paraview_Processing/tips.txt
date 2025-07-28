@@ -1,0 +1,7 @@
+1. IndentationError: expected an indented block after 'for' statement on line 1
+
+2. file format should be .tif， also delete .tifproc
+
+3.change registration name and file name
+
+4. Download link for input: https://drive.google.com/drive/folders/1tYgeA7FHXffrVzm1vBYM-A8hfXKE_rT-?usp=drive_link

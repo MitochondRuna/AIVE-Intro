@@ -1,0 +1,8 @@
+{
+    "inputFolder": "/Users/cheryl/Documents/GitHub/AIVE-Intro/ParaviewStreamline/",
+    "outputFolder": "/Users/cheryl/Documents/GitHub/AIVE-Intro/ParaviewStreamline/OutputFolder",
+    "parameters": {
+        "customDataSpacing": [0.03, 0.03, 0.1],
+        "isosurfaces": 32.0
+    }
+}
