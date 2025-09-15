@@ -1,0 +1,21 @@
+
+#This file converts a multistack tiff into a single numpy array
+
+#import the tifffile and numpy libraries 
+import tifffile as tf
+import numpy as np
+
+
+current_path = r"ENTER THE PATH TO YOUR FILE HERE"
+
+new_path = r"ENTER THE NEW FILE PATH HERE\my_array.npy"
+
+image = tf.imread(current_path)
+print(image.shape)
+
+
+np.save(new_path, image)
+print("numpy array saved!")
+
+
+
