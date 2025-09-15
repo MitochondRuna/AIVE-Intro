@@ -1,0 +1,18 @@
+#This file converts a single frame from a multistack tiff into a numpy array
+
+#import the tifffile and numpy libraries 
+import tifffile as tf
+import numpy as np
+
+
+current_path = r"ENTER PATH TO FILE HERE"
+
+new_path = r"ENTER PATH TO NEW FILE HERE\my_array1.npy"
+
+#the key refers to the frame you want to use
+image = tf.imread(current_path, key = 0)
+print(image.shape)
+
+
+np.save(new_path, image)
+print("numpy array saved!")
